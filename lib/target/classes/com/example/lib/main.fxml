@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lib.MainController">
+    <center>
+        <TableView fx:id="booksTable">
+            <columns>
+                <TableColumn text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Инвентарный номер">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="inventoryNumber"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Автор">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="author"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Название">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="title"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Год издания">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="year"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Страницы">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="pages"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="10.0"  style="-fx-padding: 10;">
+            <Button text="Добавить" onAction="#addBook"/>
+            <Button text="Удалить" onAction="#deleteBook"/>
+            <Button text="Изменить" onAction="#editBook"/>
+            <Button text="Поиск" onAction="#searchBook"/>
+            <Button text="Рассчитать штраф" onAction="#calculateFine"/>
+        </HBox>
+    </bottom>
+</BorderPane>
